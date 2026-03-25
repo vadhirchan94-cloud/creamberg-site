@@ -146,6 +146,131 @@
         <p>&copy; 2026 Creamberg. All Rights Reserved.</p>
         <p>Designed by <span>Vadhir Chan, Gael Gomez & Owen Innis</span></p>
     </footer>
+<style>
+    .mascot-chat-container {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 9999;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        font-family: 'Poppins', sans-serif;
+    }
 
+    .mascot-img {
+        width: 90px;
+        height: 90px;
+        border-radius: 50%;
+        border: 4px solid #fc54a8;
+        cursor: pointer;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        background-color: white;
+        object-fit: cover;
+    }
+
+    .mascot-img:hover {
+        transform: scale(1.1) rotate(10deg);
+    }
+
+    .chat-bubble {
+        background: white;
+        padding: 15px;
+        border-radius: 20px 20px 0 20px;
+        width: 260px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        margin-bottom: 15px;
+        display: none; /* Starts hidden */
+        border: 2px solid #fc54a8;
+    }
+
+    .chat-bubble p {
+        font-size: 14px;
+        color: #333;
+        margin-bottom: 12px;
+        line-height: 1.4;
+    }
+
+    .chat-options button {
+        display: block;
+        width: 100%;
+        background: #fff0f5;
+        border: 1px solid #fc54a8;
+        padding: 10px;
+        margin-bottom: 6px;
+        border-radius: 12px;
+        cursor: pointer;
+        font-size: 13px;
+        font-weight: 600;
+        color: #fc54a8;
+        text-align: left;
+        transition: 0.2s;
+    }
+
+    .chat-options button:hover {
+        background: #fc54a8;
+        color: white;
+    }
+
+    /* Bouncing Animation */
+    .mascot-bounce {
+        animation: quickBounce 2s infinite;
+    }
+    @keyframes quickBounce {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-12px); }
+    }
+</style>
+
+<div class="mascot-chat-container">
+    <div class="chat-bubble" id="creamyBubble">
+        <p id="creamyMessage"><b>Creamy:</b> Hey Vadhir! Ready for some ice cream magic? ✨</p>
+        <div class="chat-options">
+            <button onclick="creamyReply('menu')">Show me the flavors! 🍦</button>
+            <button onclick="creamyReply('loc')">Where are you? 📍</button>
+            <button onclick="creamyReply('home')">Go to Home Page 🏠</button>
+        </div>
+    </div>
+    
+    <img src="Menuitem4.jpg" class="mascot-img mascot-bounce" id="creamyIcon" onclick="toggleCreamy()" alt="Creamy Mascot">
+</div>
+
+<script>
+
+    function toggleCreamy() {
+        var bubble = document.getElementById("creamyBubble");
+        var icon = document.getElementById("creamyIcon");
+        
+        if (bubble.style.display === "none" || bubble.style.display === "") {
+            bubble.style.display = "block";
+            icon.classList.remove("mascot-bounce");
+        } else {
+            bubble.style.display = "none";
+            icon.classList.add("mascot-bounce"); 
+        }
+    }
+
+    
+    setTimeout(function() {
+        var bubble = document.getElementById("creamyBubble");
+        if (bubble.style.display !== "block") {
+            toggleCreamy();
+        }
+    }, 4000);
+
+
+    function creamyReply(choice) {
+        var msg = document.getElementById("creamyMessage");
+        
+        if (choice === 'menu') {
+            msg.innerHTML = "<b>Creamy:</b> We have everything from Chamos to Banana Splits! Check the <a href='menu.html' style='color:#fc54a8'>Menu</a>.";
+        } else if (choice === 'loc') {
+            msg.innerHTML = "<b>Creamy:</b> We are at 4 7th St S, Corozal. See you there! 📍";
+        } else if (choice === 'home') {
+            window.location.href = "index.html";
+        }
+    }
+</script>
 </body>
 </html>
