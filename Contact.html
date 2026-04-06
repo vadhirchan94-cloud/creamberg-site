@@ -8,9 +8,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     
     <style>
-       
-        * { margin: 0; padding: 0; box-sizing: border-box; }
 
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         html, body { height: 100%; }
 
         body {
@@ -23,9 +22,9 @@
             color: #333;
         }
 
-        
+
         .main-wrapper {
-            flex: 1;
+            flex: 1; 
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -36,100 +35,94 @@
 
         .business-title {
             font-family: 'Luckiest Guy', cursive;
-            font-size: clamp(50px, 10vw, 90px);
+            font-size: clamp(40px, 8vw, 70px);
             background: linear-gradient(to bottom, #fc54a8, #ffffff);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             filter: drop-shadow(4px 4px 0px rgba(0, 0, 0, 0.1));
-            margin-bottom: 10px;
+            margin-bottom: 5px;
             text-align: center;
         }
 
         .subtitle {
             font-family: 'Luckiest Guy', cursive;
             color: #6495ed; 
-            font-size: 24px;
+            font-size: 22px;
             margin-bottom: 30px;
             text-align: center;
             letter-spacing: 1px;
         }
 
-        
-        .contact-card {
-            background: rgba(255, 255, 255, 0.5);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.4);
-            border-radius: 20px;
-            padding: 40px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            max-width: 600px;
+
+        .link-bar {
+            display: flex; 
+            gap: 15px;     
             width: 100%;
-            text-align: center;
+            max-width: 800px; 
             margin-bottom: 30px;
+            flex-wrap: wrap; 
+            justify-content: center;
         }
 
-        .info-row {
-            margin-bottom: 20px;
-            font-size: 18px;
+        .hyperlink-box {
+            flex: 1; 
+            min-width: 200px;
+            text-align: center;
+            padding: 20px;
+            background-color: white; 
+            border: 2px solid #fc54a8;
+            border-radius: 15px;
+            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+            transition: 0.3s;
+            text-decoration: none;
+            color: inherit;
         }
 
-        .info-row b {
-            color: #fc54a8;
-            display: block;
-            font-size: 14px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 5px;
+        .hyperlink-box:hover {
+            transform: translateY(-5px);
+            background-color: #fff0f5;
         }
 
-        .info-row p {
-            font-weight: 500;
-            word-wrap: break-word;
-        }
+        .icon { font-size: 35px; margin-bottom: 10px; }
+        .link-text { font-weight: bold; font-size: 1.1em; color: #fc54a8; margin-bottom: 5px; }
+        .sub-text { font-size: 0.85em; color: #666; }
 
-        
         .profile-img {
-            width: 180px;
-            height: 180px;
+            width: 150px;
+            height: 150px;
             object-fit: cover;
             border-radius: 50%; 
             border: 5px solid white;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            margin-top: 10px;
+            margin-bottom: 25px;
         }
 
-        
+
         .back-btn {
             text-decoration: none;
             background: #333;
             color: white;
-            padding: 12px 30px;
+            padding: 12px 35px;
             border-radius: 50px;
             font-weight: 600;
             transition: 0.3s;
-            display: inline-block;
-            margin-top: 10px;
+            margin-bottom: 20px;
         }
 
         .back-btn:hover {
             background: #fc54a8;
-            box-shadow: 0 5px 15px rgba(252, 84, 168, 0.4);
-            transform: translateY(-2px);
+            transform: scale(1.05);
         }
 
-       
         footer {
             width: 100%;
-            padding: 25px;
-            background: rgba(0, 0, 0, 0.05);
-            backdrop-filter: blur(10px);
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.3);
             text-align: center;
-            border-top: 1px solid rgba(255, 255, 255, 0.3);
+            border-top: 1px solid rgba(255, 255, 255, 0.5);
         }
 
-        footer p { font-size: 14px; color: #555; }
         footer span { color: #fc54a8; font-weight: bold; }
-
     </style>
 </head>
 <body>
@@ -138,171 +131,27 @@
         <h1 class="business-title">Contact Us</h1>
         <p class="subtitle">GET IN TOUCH WITH THE SCOOP TEAM</p>
 
-      <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hyperlinks</title>
-    
+        <img src="vadhir.jpg.jpeg" class="profile-img" alt="Contact Person">
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Horizontal Hyperlinks</title>
-    
-    <style>
-        body {
-            font-family: sans-serif;
-            margin: 20px;
-            background-color: #ff06c1;
-            color: #d4d4d4;
-        }
-        
-      
-        .link-bar {
-            display: flex; 
-            gap: 20px;     
-            padding: 10px;
-            justify-content: space-between;
-        }
+        <div class="link-bar">
+            <a href="https://www.instagram.com/creamberg.bze/" target="_blank" class="hyperlink-box">
+                <div class="icon">📸</div>
+                <div class="link-text">Instagram</div>
+                <div class="sub-text">@creamberg.bze</div>
+            </a>
 
+            <a href="mailto:creambergbelize@gmail.com" class="hyperlink-box">
+                <div class="icon">📧</div>
+                <div class="link-text">Email Us</div>
+                <div class="sub-text">creambergbelize@gmail.com</div>
+            </a>
 
-        .hyperlink-box {
-            flex: 1; 
-            text-align: center;
-            padding: 15px;
-            background-color: #e02a2a;
-            border: 1px solid #e81717;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(233, 8, 8, 0.2);
-            transition: background-color 0.3s, transform 0.1s;
-        }
-
- 
-        .hyperlink-box:hover {
-            background-color: #505050; 
-            transform: translateY(-2px); 
-        }
-        
-        .hyperlink-box:active {
-            transform: translateY(0); 
-        }
-
-       
-        .hyperlink-box a {
-            text-decoration: none; 
-            color: inherit; 
-            display: block;
-            padding: 5px 0; 
-        }
-
-        .icon {
-            font-size: 30px;
-            margin-bottom: 5px;
-        }
-
-        .link-text {
-            font-weight: bold;
-            font-size: 1.1em;
-        }
-    </style>
-</head>
-<body>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Horizontal Hyperlinks</title>
-    
-    <style>
-      
-        body {
-            font-family: sans-serif;
-            margin: 20px;
-            background-color: #c51074;
-            color: #d4d4d4;
-        }
-        
-    
-        .link-bar {
-            display: flex; 
-            gap: 20px;     
-            padding: 10px;
-            justify-content: space-between;
-            max-width: 1200px; 
-            margin: 0 auto;    
-        }
-
-       
-        .hyperlink-box {
-            flex: 1; 
-            text-align: center;
-            padding: 15px;
-            background-color: #fc76c7;
-            border: 1px solid #b92929;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(245, 13, 13, 0.2);
-            transition: background-color 0.3s, transform 0.1s;
-        }
-
-        
-        .hyperlink-box:hover {
-            background-color: #505050; 
-            transform: translateY(-2px); 
-        }
-        
-        .hyperlink-box a {
-            text-decoration: none; 
-            color: inherit; 
-            display: block; 
-            padding: 5px 0; 
-        }
-
-        .icon {
-            font-size: 30px;
-            margin-bottom: 5px;
-        }
-
-        .link-text {
-            font-weight: bold;
-            font-size: 1.1em;
-        }
-
-       
-    </style>
-</head>
-<body>
-
-<div class="link-bar">
-    
-
-    <div class="hyperlink-box">
-        <a href="https://www.instagram.com/creamberg.bze/" target="_blank">
-            <div class="icon">📸</div>
-            <div class="link-text">Vadhirxz Instagram</div>
-            <div>Check out my photos</div>
-        </a>
-    </div>
-
-    <div class="hyperlink-box">
-        <a href="mailto:creambergbelize@gmail.com">
-            <div class="icon">📧</div>
-            <div class="link-text">Email us</div>
-            <div>creambergbelize@gmail.com
-
-</div>
-        </a>
-    </div>
-
-    <div class="hyperlink-box">
-        <a href="+501 604-1689" target="_blank">
-            <div class="icon">📱</div>
-            <div class="link-text">Contact us</div>
-            <div>+501 604-1689</div>
-        </a>
-    </div>
+            <a href="tel:+5016041689" class="hyperlink-box">
+                <div class="icon">📱</div>
+                <div class="link-text">Call Us</div>
+                <div class="sub-text">+501 604-1689</div>
+            </a>
+        </div>
 
         <a href="index.html" class="back-btn">← Back to Home</a>
     </div>
