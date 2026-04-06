@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     
     <style>
+       
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         html, body { height: 100%; }
@@ -22,6 +23,7 @@
             color: #333;
         }
 
+        
         .main-wrapper {
             flex: 1;
             display: flex;
@@ -52,6 +54,7 @@
             letter-spacing: 1px;
         }
 
+        
         .contact-card {
             background: rgba(255, 255, 255, 0.5);
             backdrop-filter: blur(10px);
@@ -79,19 +82,12 @@
             margin-bottom: 5px;
         }
 
-        /* --- NEW LINK STYLES --- */
-        .info-row a {
-            color: #333;
-            text-decoration: none;
-            font-weight: 600;
-            transition: 0.3s;
+        .info-row p {
+            font-weight: 500;
+            word-wrap: break-word;
         }
 
-        .info-row a:hover {
-            color: #fc54a8;
-            text-decoration: underline;
-        }
-
+        
         .profile-img {
             width: 180px;
             height: 180px;
@@ -102,6 +98,7 @@
             margin-top: 10px;
         }
 
+        
         .back-btn {
             text-decoration: none;
             background: #333;
@@ -120,6 +117,7 @@
             transform: translateY(-2px);
         }
 
+       
         footer {
             width: 100%;
             padding: 25px;
@@ -131,6 +129,7 @@
 
         footer p { font-size: 14px; color: #555; }
         footer span { color: #fc54a8; font-weight: bold; }
+
     </style>
 </head>
 <body>
@@ -139,24 +138,171 @@
         <h1 class="business-title">Contact Us</h1>
         <p class="subtitle">GET IN TOUCH WITH THE SCOOP TEAM</p>
 
-        <div class="contact-card">
-            <div class="info-row">
-                <b>Email</b>
-                <p><a href="mailto:creambergbelize@gmail.com">creambergbelize@gmail.com</a></p>
-            </div>
+      <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hyperlinks</title>
+    
 
-            <div class="info-row">
-                <b>Phone</b>
-                <p><a href="tel:+5016041689">+501 604-1689</a></p>
-            </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Horizontal Hyperlinks</title>
+    
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 20px;
+            background-color: #ff06c1;
+            color: #d4d4d4;
+        }
+        
+      
+        .link-bar {
+            display: flex; 
+            gap: 20px;     
+            padding: 10px;
+            justify-content: space-between;
+        }
 
-            <div class="info-row">
-                <b>Instagram</b>
-                <p><a href="https://www.instagram.com/creamberg.bze" target="_blank">@creamberg.bze</a></p>
-            </div>
 
-            <img src="vadhir.jpg.jpeg" class="profile-img" alt="Contact Person">
-        </div>
+        .hyperlink-box {
+            flex: 1; 
+            text-align: center;
+            padding: 15px;
+            background-color: #e02a2a;
+            border: 1px solid #e81717;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(233, 8, 8, 0.2);
+            transition: background-color 0.3s, transform 0.1s;
+        }
+
+ 
+        .hyperlink-box:hover {
+            background-color: #505050; 
+            transform: translateY(-2px); 
+        }
+        
+        .hyperlink-box:active {
+            transform: translateY(0); 
+        }
+
+       
+        .hyperlink-box a {
+            text-decoration: none; 
+            color: inherit; 
+            display: block;
+            padding: 5px 0; 
+        }
+
+        .icon {
+            font-size: 30px;
+            margin-bottom: 5px;
+        }
+
+        .link-text {
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+    </style>
+</head>
+<body>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Horizontal Hyperlinks</title>
+    
+    <style>
+      
+        body {
+            font-family: sans-serif;
+            margin: 20px;
+            background-color: #c51074;
+            color: #d4d4d4;
+        }
+        
+    
+        .link-bar {
+            display: flex; 
+            gap: 20px;     
+            padding: 10px;
+            justify-content: space-between;
+            max-width: 1200px; 
+            margin: 0 auto;    
+        }
+
+       
+        .hyperlink-box {
+            flex: 1; 
+            text-align: center;
+            padding: 15px;
+            background-color: #fc76c7;
+            border: 1px solid #b92929;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(245, 13, 13, 0.2);
+            transition: background-color 0.3s, transform 0.1s;
+        }
+
+        
+        .hyperlink-box:hover {
+            background-color: #505050; 
+            transform: translateY(-2px); 
+        }
+        
+        .hyperlink-box a {
+            text-decoration: none; 
+            color: inherit; 
+            display: block; 
+            padding: 5px 0; 
+        }
+
+        .icon {
+            font-size: 30px;
+            margin-bottom: 5px;
+        }
+
+        .link-text {
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+       
+    </style>
+</head>
+<body>
+
+<div class="link-bar">
+    
+
+    <div class="hyperlink-box">
+        <a href="https://www.instagram.com/creamberg.bze/" target="_blank">
+            <div class="icon">📸</div>
+            <div class="link-text">Vadhirxz Instagram</div>
+            <div>Check out my photos</div>
+        </a>
+    </div>
+
+    <div class="hyperlink-box">
+        <a href="mailto:creambergbelize@gmail.com">
+            <div class="icon">📧</div>
+            <div class="link-text">Email us</div>
+            <div>creambergbelize@gmail.com
+
+</div>
+        </a>
+    </div>
+
+    <div class="hyperlink-box">
+        <a href="+501 604-1689" target="_blank">
+            <div class="icon">📱</div>
+            <div class="link-text">Contact us</div>
+            <div>+501 604-1689</div>
+        </a>
+    </div>
 
         <a href="index.html" class="back-btn">← Back to Home</a>
     </div>
