@@ -9,6 +9,7 @@
     
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
+
         html, body { height: 100%; }
 
         body {
@@ -33,88 +34,102 @@
 
         .business-title {
             font-family: 'Luckiest Guy', cursive;
-            font-size: clamp(40px, 8vw, 70px);
+            font-size: clamp(50px, 10vw, 90px);
             background: linear-gradient(to bottom, #fc54a8, #ffffff);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             filter: drop-shadow(4px 4px 0px rgba(0, 0, 0, 0.1));
-            margin-bottom: 5px;
+            margin-bottom: 10px;
             text-align: center;
         }
 
         .subtitle {
             font-family: 'Luckiest Guy', cursive;
             color: #6495ed; 
-            font-size: 22px;
+            font-size: 24px;
             margin-bottom: 30px;
             text-align: center;
             letter-spacing: 1px;
         }
 
-  
-        .link-bar {
-            display: flex; 
-            gap: 20px;     
+        .contact-card {
+            background: rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            max-width: 600px;
             width: 100%;
-            max-width: 900px; 
-            margin-bottom: 40px;
-            justify-content: center;
-            flex-wrap: wrap; 
-        }
-
-        .hyperlink-box {
-            flex: 1; 
-            min-width: 200px;
-            max-width: 280px;
             text-align: center;
-            padding: 25px;
-            background-color: #fc76c7; 
-            border: 2px solid #b92929;
-            border-radius: 15px;
-            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
-            transition: 0.3s;
+            margin-bottom: 30px;
+        }
+
+        .info-row {
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+
+        .info-row b {
+            color: #fc54a8;
+            display: block;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 5px;
+        }
+
+        /* --- NEW LINK STYLES --- */
+        .info-row a {
+            color: #333;
             text-decoration: none;
-            color: white; 
+            font-weight: 600;
+            transition: 0.3s;
         }
 
-        .hyperlink-box:hover {
-            transform: translateY(-5px);
-            background-color: #505050;
+        .info-row a:hover {
+            color: #fc54a8;
+            text-decoration: underline;
         }
 
-        .icon { font-size: 35px; margin-bottom: 10px; }
-        .link-text { font-weight: bold; font-size: 1.1em; margin-bottom: 5px; }
-        .sub-text { font-size: 0.85em; opacity: 0.9; }
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 50%; 
+            border: 5px solid white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-top: 10px;
+        }
 
-        #fixed-back-btn {
+        .back-btn {
             text-decoration: none;
             background: #333;
             color: white;
-            padding: 12px 40px;
-            border-radius: 50px; 
+            padding: 12px 30px;
+            border-radius: 50px;
             font-weight: 600;
             transition: 0.3s;
             display: inline-block;
             margin-top: 10px;
-            margin-bottom: 30px;
-            border: none;
-            width: auto; 
         }
 
-        #fixed-back-btn:hover {
+        .back-btn:hover {
             background: #fc54a8;
-            transform: scale(1.05);
             box-shadow: 0 5px 15px rgba(252, 84, 168, 0.4);
+            transform: translateY(-2px);
         }
 
         footer {
             width: 100%;
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.3);
+            padding: 25px;
+            background: rgba(0, 0, 0, 0.05);
+            backdrop-filter: blur(10px);
             text-align: center;
-            border-top: 1px solid rgba(255, 255, 255, 0.5);
+            border-top: 1px solid rgba(255, 255, 255, 0.3);
         }
 
+        footer p { font-size: 14px; color: #555; }
         footer span { color: #fc54a8; font-weight: bold; }
     </style>
 </head>
@@ -124,27 +139,26 @@
         <h1 class="business-title">Contact Us</h1>
         <p class="subtitle">GET IN TOUCH WITH THE SCOOP TEAM</p>
 
-        <div class="link-bar">
-            <a href="https://www.instagram.com/creamberg.bze/" target="_blank" class="hyperlink-box">
-                <div class="icon">📸</div>
-                <div class="link-text">Instagram</div>
-                <div class="sub-text">@creamberg.bze</div>
-            </a>
+        <div class="contact-card">
+            <div class="info-row">
+                <b>Email</b>
+                <p><a href="mailto:creambergbelize@gmail.com">creambergbelize@gmail.com</a></p>
+            </div>
 
-            <a href="mailto:creambergbelize@gmail.com" class="hyperlink-box">
-                <div class="icon">📧</div>
-                <div class="link-text">Email Us</div>
-                <div class="sub-text">creambergbelize@gmail.com</div>
-            </a>
+            <div class="info-row">
+                <b>Phone</b>
+                <p><a href="tel:+5016041689">+501 604-1689</a></p>
+            </div>
 
-            <a href="tel:+5016041689" class="hyperlink-box">
-                <div class="icon">📱</div>
-                <div class="link-text">Contact Us</div>
-                <div class="sub-text">+501 604-1689</div>
-            </a>
+            <div class="info-row">
+                <b>Instagram</b>
+                <p><a href="https://www.instagram.com/creamberg.bze" target="_blank">@creamberg.bze</a></p>
+            </div>
+
+            <img src="vadhir.jpg.jpeg" class="profile-img" alt="Contact Person">
         </div>
 
-        <a href="index.html" id="fixed-back-btn">← Back to Home</a>
+        <a href="index.html" class="back-btn">← Back to Home</a>
     </div>
 
     <footer>
