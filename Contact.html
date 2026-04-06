@@ -8,7 +8,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     
     <style>
-
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html, body { height: 100%; }
 
@@ -22,9 +21,8 @@
             color: #333;
         }
 
-
         .main-wrapper {
-            flex: 1; 
+            flex: 1;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -53,65 +51,60 @@
             letter-spacing: 1px;
         }
 
-
+  
         .link-bar {
             display: flex; 
-            gap: 15px;     
+            gap: 20px;     
             width: 100%;
-            max-width: 800px; 
-            margin-bottom: 30px;
-            flex-wrap: wrap; 
+            max-width: 900px; 
+            margin-bottom: 40px;
             justify-content: center;
+            flex-wrap: wrap; 
         }
 
         .hyperlink-box {
             flex: 1; 
             min-width: 200px;
+            max-width: 280px;
             text-align: center;
-            padding: 20px;
-            background-color: white; 
-            border: 2px solid #fc54a8;
+            padding: 25px;
+            background-color: #fc76c7; 
+            border: 2px solid #b92929;
             border-radius: 15px;
             box-shadow: 0 8px 15px rgba(0,0,0,0.1);
             transition: 0.3s;
             text-decoration: none;
-            color: inherit;
+            color: white; 
         }
 
         .hyperlink-box:hover {
             transform: translateY(-5px);
-            background-color: #fff0f5;
+            background-color: #505050;
         }
 
         .icon { font-size: 35px; margin-bottom: 10px; }
-        .link-text { font-weight: bold; font-size: 1.1em; color: #fc54a8; margin-bottom: 5px; }
-        .sub-text { font-size: 0.85em; color: #666; }
+        .link-text { font-weight: bold; font-size: 1.1em; margin-bottom: 5px; }
+        .sub-text { font-size: 0.85em; opacity: 0.9; }
 
-        .profile-img {
-            width: 150px;
-            height: 150px;
-            object-fit: cover;
-            border-radius: 50%; 
-            border: 5px solid white;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            margin-bottom: 25px;
-        }
-
-
-        .back-btn {
+        #fixed-back-btn {
             text-decoration: none;
             background: #333;
             color: white;
-            padding: 12px 35px;
-            border-radius: 50px;
+            padding: 12px 40px;
+            border-radius: 50px; 
             font-weight: 600;
             transition: 0.3s;
-            margin-bottom: 20px;
+            display: inline-block;
+            margin-top: 10px;
+            margin-bottom: 30px;
+            border: none;
+            width: auto; 
         }
 
-        .back-btn:hover {
+        #fixed-back-btn:hover {
             background: #fc54a8;
             transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(252, 84, 168, 0.4);
         }
 
         footer {
@@ -131,8 +124,6 @@
         <h1 class="business-title">Contact Us</h1>
         <p class="subtitle">GET IN TOUCH WITH THE SCOOP TEAM</p>
 
-        <img src="vadhir.jpg.jpeg" class="profile-img" alt="Contact Person">
-
         <div class="link-bar">
             <a href="https://www.instagram.com/creamberg.bze/" target="_blank" class="hyperlink-box">
                 <div class="icon">📸</div>
@@ -148,12 +139,12 @@
 
             <a href="tel:+5016041689" class="hyperlink-box">
                 <div class="icon">📱</div>
-                <div class="link-text">Call Us</div>
+                <div class="link-text">Contact Us</div>
                 <div class="sub-text">+501 604-1689</div>
             </a>
         </div>
 
-        <a href="index.html" class="back-btn">← Back to Home</a>
+        <a href="index.html" id="fixed-back-btn">← Back to Home</a>
     </div>
 
     <footer>
