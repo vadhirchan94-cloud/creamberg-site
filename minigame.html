@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scoop Catch | Creamberg</title>
+    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Poppins:wght@600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            background: linear-gradient(135deg, #ffc0cb 0%, #ffe4e1 100%);
+            font-family: 'Poppins', sans-serif;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #333;
+        }
+
+        h1 { font-family: 'Luckiest Guy', cursive; color: #fc54a8; margin-top: 20px; }
+
+        #game-container {
+            position: relative;
+            width: 400px;
+            height: 500px;
+            background: white;
+            border: 5px solid #6495ed;
+            border-radius: 20px;
+            overflow: hidden;
+            cursor: none;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        #cone {
+            position: absolute;
+            bottom: 10px;
+            width: 60px;
+            height: 80px;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 60"><path d="M0 0 L40 0 L20 60 Z" fill="%23D2B48C" stroke="%23A0522D"/></svg>');
+            background-size: contain;
+            background-repeat: no-repeat;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .scoop {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+
+        #score-board { font-size: 24px; font-weight: bold; margin: 10px; color: #fc54a8; }
+        
+        .back-btn {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: #333;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>SCOOP CATCHER</h1>
+    <div id="score-board">Score: 0 | Misses: 0</div>
+    
+    <div id="game-container">
+        <div id="cone"></div>
+    </div>
+
+    <a href="index.html" class="back-btn">← Back to Site</a>
+
+    <script>
+        const container = document.getElementById('game-container');
+        const cone = document.getElementById('cone');
+        const scoreBoard = document.getElementById('score-board');
+        
+        let score = 0;
+        let misses = 0;
+        let gameActive = true;
+
+        // Move Cone with Mouse
+        container.addEventListener('mousemove', (e) => {
+            if(!gameActive) return;
+            let rect = container.getBoundingClientRect();
+            let x = e.clientX - rect.left;
+            if (x > 30 && x < 370) {
+                cone.style.left = (x - 30) + 'px';
+            }
+        });
+
+        function createScoop() {
+            if(!gameActive) return;
+
+            const scoop = document.createElement('div');
+            scoop.classList.add('scoop');
+            
+            // Random Colors
+            const colors = ['#fc54a8', '#6495ed', '#fffacd', '#98fb98'];
+            scoop.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+            
+            scoop.style.left = Math.random() * (360) + 'px';
+            scoop.style.top = '-50px';
+            container.appendChild(scoop);
+
+            let fallInterval = setInterval(() => {
+                let top = parseInt(scoop.style.top);
+                if (top > 500) {
+                    clearInterval(fallInterval);
+                    container.removeChild(scoop);
+                    misses++;
+                    updateBoard();
+                    if(misses >= 3) gameOver();
+                } else {
+                    scoop.style.top = (top + 5) + 'px';
+                    checkCollision(scoop, fallInterval);
+                }
+            }, 20);
+        }
+
+        function checkCollision(scoop, interval) {
+            let sRect = scoop.getBoundingClientRect();
+            let cRect = cone.getBoundingClientRect();
+
+            if (sRect.bottom >= cRect.top && 
+                sRect.left < cRect.right && 
+                sRect.right > cRect.left) {
+                
+                score++;
+                updateBoard();
+                clearInterval(interval);
+                container.removeChild(scoop);
+            }
+        }
+
+        function updateBoard() {
+            scoreBoard.innerText = `Score: ${score} | Misses: ${misses}`;
+        }
+
+        function gameOver() {
+            gameActive = false;
+            alert("Game Over! You caught " + score + " scoops!");
+            location.reload();
+        }
+
+        setInterval(createScoop, 1000);
+    </script>
+</body>
+</html>
